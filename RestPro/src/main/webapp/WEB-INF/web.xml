@@ -1,0 +1,45 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>Service</servlet-name>
+  	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  	<init-param>
+  		<param-name>com.sun.jersey.config.property.packages</param-name>
+  		<param-value>com.empresa.proyecto.ws.rest</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+  		<param-value>true</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmpresaServlet</servlet-name>
+  	<display-name>EmpresaServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.empresa.proyecto.rest.servlet.EmpresaServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CrearEmpresaServlet</servlet-name>
+  	<display-name>CrearEmpresaServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.empresa.proyecto.rest.servlet.CrearEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Service</servlet-name>
+  	<url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmpresaServlet</servlet-name>
+  	<url-pattern>/EmpresaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CrearEmpresaServlet</servlet-name>
+  	<url-pattern>/CrearEmpresaServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
